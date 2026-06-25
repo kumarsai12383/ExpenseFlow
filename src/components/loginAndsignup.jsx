@@ -79,7 +79,7 @@ function LoginAndSignup({ setLoginStatus }) {
           {/* Logo */}
           <img src={Logo} alt="logo" className="w-24 mb-1" />
           <h1 className="text-3xl font-bold text-emerald-400">
-            Expense Tracker
+            ExpenseFlow
           </h1>
           {/* Heading */}
           <h1 className="text-5xl font-bold text-center leading-tight">

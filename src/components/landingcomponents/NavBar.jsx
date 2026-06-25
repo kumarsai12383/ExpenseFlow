@@ -29,6 +29,10 @@ function Navbar() {
             >
               Features
             </a>
+            <a href="#dashboard"
+            className="text-slate-400 hover:text-emerald-400 transition-colors text-sm font-medium">
+              Dashboard Overview
+            </a>
             <a
               href="#how-it-works"
               className="text-slate-400 hover:text-emerald-400 transition-colors text-sm font-medium"
@@ -42,7 +46,7 @@ function Navbar() {
               Why Choose Us
             </a>
             <a
-              href="#faq's"
+              href="#faq"
               className="text-slate-400 hover:text-emerald-400 transition-colors text-sm font-medium"
             >
               FAQ's

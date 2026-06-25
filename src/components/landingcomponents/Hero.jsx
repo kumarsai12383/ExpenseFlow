@@ -45,7 +45,7 @@ function Hero() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex  sm:flex-row gap-4 justify-start items-center">
               <Link to="/auth" className="bg-emerald-500  hover:bg-emerald-400 text-[#0F172A] font-semibold text-lg p-2 rounded-md">
                 Start Tracking Free
               </Link>
