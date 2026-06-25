@@ -13,7 +13,7 @@ async function GoogleOAuth(setMessage, setStatus) {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `${window.location.origin}/dashboard`,
+      redirectTo: `https://expense-flow-peach-seven.vercel.app/dashboard`,
     },
   });
   if (error) {
