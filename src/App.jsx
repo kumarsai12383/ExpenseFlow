@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/landingPage";
 import { useState, useEffect } from "react";
-import { GetUser,Logout } from "./supaApi/auth";
+import { GetUser  } from "./supaApi/auth";
 import LoginAndSignup from "./components/loginAndsignup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./pages/DashboardLayout";
@@ -12,7 +12,7 @@ import ExpensesPage from "./components/DashBoardComponents/expenses/ExpensePage"
 import IncomePage from "./components/DashBoardComponents/income/IncomePage";
 import ProfileForm from "./components/DashBoardComponents/ProfileForm";
 import Analytics from "./components/DashBoardComponents/Analysis/analysis";
-import Settings from "./components/DashBoardComponents/Settings";
+import Settings from "./components/DashBoardComponents/settings";
 function App() {
   const[loginStatus, setLoginStatus] = useState(null);
   const [user, setUserInApp] = useState(null);
