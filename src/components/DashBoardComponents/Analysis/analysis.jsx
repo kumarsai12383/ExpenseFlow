@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import PieChart from "../charts/Piechart";
 import Loading from "../../Loading";
 import MonthlyChart from "../charts/MonltlyChart";
-import LineChart from "../charts/LineChart";
+import LineChart from "../charts/lineChart";
 import { getCurrency, currencySymbol } from "../../../utils/currency";
 
 function Analytics({ user }) {
