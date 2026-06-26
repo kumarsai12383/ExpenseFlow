@@ -65,7 +65,7 @@ function LoginAndSignup({ setLoginStatus }) {
   function handleGoogleLogin() {
     setLoading(true);
     try {
-      GoogleOAuth(setMessage, setStatus);
+      GoogleOAuth();
     } catch (error) {
       console.error("Error with Google login:", error);
     } finally {

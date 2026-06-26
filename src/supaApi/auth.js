@@ -9,7 +9,7 @@ async function GetUser() {
  
   return data.user;
 }
-async function GoogleOAuth(setMessage, setStatus) { 
+async function GoogleOAuth() { 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
@@ -20,10 +20,7 @@ async function GoogleOAuth(setMessage, setStatus) {
     console.error("Error with Google login:", error);
     setMessage("Error with Google login.");
     setStatus("Google login failed!");
-  } else {
-    setMessage("Google login successful! Redirecting...");
-    setStatus("Google login successful!");
-  }
+  } 
 }
 
 async function LoginWithEmail(email, password, setMessage , setStatus) {
