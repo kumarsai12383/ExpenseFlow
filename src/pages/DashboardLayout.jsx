@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
-import { GetExpenses, GetIncome } from "../supaApi/data";
+import { useState } from "react";
+
 import { Outlet } from "react-router-dom";
 import SideBar from "../components/DashBoardComponents/sideBar";
 
 function Dashboard({ user }) {
   const [isOpen, setIsOpen] = useState(false);
-
+console.log(isOpen)
   return (
     <>
       <div className="flex w-full min-h-screen bg-[#0F172A]">
         <div>
           <div className="hidden md:block w-72 bg-[#080b13] text-white min-h-screen">
-            <SideBar isOpen={isOpen} />
+            <SideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
           </div>
           <div className="block md:hidden bg-[#080b13] text-white min-h-screen">
-            <SideBar isOpen={isOpen} />
+            <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </div>
 
