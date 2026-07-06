@@ -12,7 +12,7 @@ function AddExpenseForm({ user, onExpenseAdded, isEditing, selectedExpense }) {
     const userId = user?.id;
     if (isEditing) {
       await UpdateExpense(
-        selectedExpense.id,
+        selectedExpense.id, 
         title,
         parseFloat(amount),
         category,
