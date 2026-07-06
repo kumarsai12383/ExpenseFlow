@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/ExpenseLogo.png";
 
 function SideBar({ isOpen, setIsOpen }) {
@@ -29,8 +29,11 @@ function SideBar({ isOpen, setIsOpen }) {
               <div className="flex-1 w-full px-15 py-6 rounded-lg shadow-lg">
                 <ul className="space-y-8 w-full">
                   <li className="flex items-center gap-2">
-                    <Link
+                    <NavLink
                       to="/dashboard"
+                      className={({ isActive }) =>
+                        isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                      }
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
                     >
@@ -52,10 +55,13 @@ function SideBar({ isOpen, setIsOpen }) {
                         <rect width="7" height="5" x="3" y="16" rx="1" />
                       </svg>
                       Dashboard
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                      }
                       to="/dashboard/expenses"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
@@ -80,10 +86,13 @@ function SideBar({ isOpen, setIsOpen }) {
                         <circle cx="12" cy="12" r="2" />
                       </svg>
                       Expenses
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                      }
                       to="/dashboard/income"
                       className="hover:text-emerald-400  flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
@@ -105,10 +114,13 @@ function SideBar({ isOpen, setIsOpen }) {
                         <path d="M8 12h8" />
                       </svg>
                       Income
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                      }
                       to="/dashboard/analytics"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
@@ -129,10 +141,13 @@ function SideBar({ isOpen, setIsOpen }) {
                         <path d="m19 9-5 5-4-4-3 3" />
                       </svg>
                       Analytics
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                      }
                       to="/dashboard/profile"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
@@ -154,10 +169,13 @@ function SideBar({ isOpen, setIsOpen }) {
                         <circle cx="10" cy="7" r="4" />
                       </svg>
                       profile
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                      }
                       to="/dashboard/settings"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
@@ -178,10 +196,13 @@ function SideBar({ isOpen, setIsOpen }) {
                         <circle cx="12" cy="12" r="3" />
                       </svg>
                       Settings
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                      }
                       to="/dashboard/logout"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
@@ -203,7 +224,7 @@ function SideBar({ isOpen, setIsOpen }) {
                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
                       </svg>
                       Logout
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -223,7 +244,10 @@ function SideBar({ isOpen, setIsOpen }) {
           <div className="flex-1 w-full px-15 py-6 rounded-lg shadow-lg">
             <ul className="space-y-8 w-full">
               <li className="flex items-center gap-2">
-                <Link
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "bg-blue-500 text-white" : "text-gray-100"
+                  }
                   to="/dashboard"
                   className="hover:text-emerald-400 flex items-center gap-2"
                 >
@@ -245,12 +269,16 @@ function SideBar({ isOpen, setIsOpen }) {
                     <rect width="7" height="5" x="3" y="16" rx="1" />
                   </svg>
                   Dashboard
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "flex items-center gap-2 border border-emerald-700 p-2 rounded-md text-white hover:text-emerald-400"
+                      : "flex items-center gap-2 text-gray-100 p-2 rounded-md hover:text-emerald-400"
+                  }
                   to="/dashboard/expenses"
-                  className="hover:text-emerald-400 flex items-center gap-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -272,11 +300,15 @@ function SideBar({ isOpen, setIsOpen }) {
                     <circle cx="12" cy="12" r="2" />
                   </svg>
                   Expenses
-                </Link>
+                </NavLink>
               </li>
-              <Link
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "flex items-center gap-2 border border-emerald-700 p-2 rounded-md text-white hover:text-emerald-400"
+                    : "flex items-center gap-2 text-gray-100 p-2 rounded-md hover:text-emerald-400"
+                }
                 to="/dashboard/income"
-                className="hover:text-emerald-400 flex items-center gap-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -295,11 +327,16 @@ function SideBar({ isOpen, setIsOpen }) {
                   <path d="M8 12h8" />
                 </svg>
                 Income
-              </Link>
+              </NavLink>
               <li>
-                <Link
+                <NavLink
+                 
                   to="/dashboard/analytics"
-                  className="hover:text-emerald-400 flex items-center gap-2"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "flex items-center gap-2 border border-emerald-700 p-2 rounded-md text-white hover:text-emerald-400"
+                      : "flex items-center gap-2 text-gray-100 p-2 rounded-md hover:text-emerald-400"
+                  }
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -317,12 +354,17 @@ function SideBar({ isOpen, setIsOpen }) {
                     <path d="m19 9-5 5-4-4-3 3" />
                   </svg>
                   Analytics
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
+                   className={({ isActive }) =>
+                    isActive
+                      ? "flex items-center gap-2 border border-emerald-700 p-2 rounded-md text-white hover:text-emerald-400"
+                      : "flex items-center gap-2 text-gray-100 p-2 rounded-md hover:text-emerald-400"
+                  }
                   to="/dashboard/profile"
-                  className="hover:text-emerald-400 flex items-center gap-2"
+                  
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -341,12 +383,17 @@ function SideBar({ isOpen, setIsOpen }) {
                     <circle cx="10" cy="7" r="4" />
                   </svg>
                   profile
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
+                 
                   to="/dashboard/settings"
-                  className="hover:text-emerald-400 flex items-center gap-2"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "flex items-center gap-2 border border-emerald-700 p-2 rounded-md text-white hover:text-emerald-400"
+                      : "flex items-center gap-2 text-gray-100 p-2 rounded-md hover:text-emerald-400"
+                  }
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -364,12 +411,16 @@ function SideBar({ isOpen, setIsOpen }) {
                     <circle cx="12" cy="12" r="3" />
                   </svg>
                   Settings
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "flex items-center gap-2 border border-emerald-700 p-2 rounded-md text-white hover:text-emerald-400"
+                      : "flex items-center gap-2 text-gray-100 p-2 rounded-md hover:text-emerald-400"
+                  }
                   to="/dashboard/logout"
-                  className="hover:text-emerald-400 flex items-center gap-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -388,7 +439,7 @@ function SideBar({ isOpen, setIsOpen }) {
                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
                   </svg>
                   Logout
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
