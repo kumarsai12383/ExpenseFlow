@@ -28,9 +28,9 @@ function ExpensePage({ user }) {
   }, []);
   return (
     <>
-      <div className="flex-1 p-4 ">
+      <div className="flex-1 px-2 ">
         <div>
-          <h2 className="text-2xl font-bold mb-4">Expenses</h2>
+          <h2 className="text-2xl text-emerald-400 font-bold mb-4">Expenses</h2>
           <p className="text-gray-600">
             Here you can view and manage all your expenses. You can add new
             expenses, categorize them, and track your spending habits over time.

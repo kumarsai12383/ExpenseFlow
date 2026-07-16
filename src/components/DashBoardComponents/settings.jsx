@@ -12,9 +12,9 @@ function Settings({ user }) {
     localStorage.setItem("currency", selected);
   };
   return (
-    <div className="p-4 space-y-6">
+    <div className="w-full p-4 space-y-6">
       <div>
-        <h1 className="text-3xl font-bold">Settings</h1>
+        <h1 className="text-3xl text-emerald-400 font-bold">Settings</h1>
         <p className="text-gray-500">Manage your application preferences.</p>
       </div>
 
@@ -159,10 +159,10 @@ function Settings({ user }) {
       </div>
 
       {/* Danger Zone */}
-      <div className="bg-red-950/20 border border-red-500 rounded-xl p-5">
+      <div className="bg-red-100 border border-red-500 rounded-xl p-5">
         <div className="mb-5">
           <h2 className="text-xl font-semibold text-red-400">Danger Zone</h2>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-gray-800 mt-1">
             These actions are irreversible. Proceed carefully.
           </p>
         </div>
@@ -170,8 +170,8 @@ function Settings({ user }) {
         <div className="space-y-4">
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="text-white font-medium">Sign Out</h3>
-              <p className="text-gray-400 text-sm">
+              <h3 className="text-black font-medium">Sign Out</h3>
+              <p className="text-gray-800 text-sm">
                 Sign out from your current session.
               </p>
             </div>
@@ -188,8 +188,8 @@ function Settings({ user }) {
 
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="text-white font-medium">Delete Account</h3>
-              <p className="text-gray-400 text-sm">
+              <h3 className="text-black font-medium">Delete Account</h3>
+              <p className="text-gray-800 text-sm">
                 Permanently delete your account and all data.
               </p>
             </div>

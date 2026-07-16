@@ -66,7 +66,7 @@ function PieChart({ expenseCategory }) {
     ],
   };
   return (
-    <div className="w-full h-96">
+    <div className="flex items-center justify-center w-fit h-96">
       <Pie data={data} />
     </div>
   );

@@ -15,7 +15,7 @@ function LogoutPage({ setLogout }) {
     <>
     <div className="h-150 flex items-center justify-center">
         <div className="p-8 rounded shadow">
-            <h2 className="text-2xl font-bold mb-4">Logout</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Logout</h2>
             <p className="text-gray-600 mb-6">Are you sure you want to logout?</p>
             <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                 Logout

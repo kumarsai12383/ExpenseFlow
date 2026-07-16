@@ -4,11 +4,9 @@ import PieChart from "./charts/Piechart";
 import Loading from "../Loading";
 import { getCurrency, currencySymbol } from "../../utils/currency";
 
-
 import MonthlyChart from "./charts/MonltlyChart";
 import DashboardExpenseTable from "./dashBoardTable";
 function DashBoardHome({ user }) {
-
   const [expenses, setExpenses] = useState([]);
   const [expenseCategory, setExpenseCategory] = useState([
     { category: "", amount: 0 },
@@ -33,7 +31,6 @@ function DashBoardHome({ user }) {
   };
 
   useEffect(() => {
-    
     fetchExpenses();
   }, [user]);
   useEffect(() => {
@@ -44,7 +41,7 @@ function DashBoardHome({ user }) {
       })),
     ];
     setExpenseCategory(expenseCategories);
-   
+
     const balance =
       income.reduce((sum, inc) => sum + inc.amount, 0) -
       expenses.reduce((sum, exp) => sum + exp.amount, 0);
@@ -58,13 +55,15 @@ function DashBoardHome({ user }) {
   }, [income, expenses]);
   return (
     <>
-      <div className="flex-1 p-4 ">
-        <h2 className="text-2xl font-bold mb-4">
+      <div className="px-2">
+        <h2 className="text-2xl font-bold text-emerald-400 mb-4">
           Welcome to Your Dashboard{" "}
-          <span className="text-emerald-400">{user?.user_metadata?.name}</span>
+          <span className="dancingscript text-emerald-400">
+            {user?.user_metadata?.name}
+          </span>
         </h2>
 
-        <p className="text-gray-600">
+        <p className="text-white">
           Here you can manage your expenses, view reports, and customize your
           settings.
         </p>
@@ -74,12 +73,12 @@ function DashBoardHome({ user }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-            <div className=" p-4 rounded-lg border border-emerald-400/20">
+            <div className=" p-4 rounded-lg border border-emerald-400/20 shadow-md">
               <h3 className="text-xl font-semibold text-emerald-400 mb-2">
                 Total Income
               </h3>
-              <p className="text-2xl font-bold">
-                {currencySymbol[currency]} {" "}
+              <p className="text-2xl text-emerald-400 font-bold">
+                {currencySymbol[currency]}{" "}
                 {income.reduce((sum, inc) => sum + inc.amount, 0).toFixed(2)}
               </p>
             </div>
@@ -87,8 +86,8 @@ function DashBoardHome({ user }) {
               <h3 className="text-xl font-semibold text-emerald-400 mb-2">
                 Total Expenses
               </h3>
-              <p className="text-2xl font-bold">
-                {currencySymbol[currency]} {" "}
+              <p className="text-2xl text-emerald-400 font-bold">
+                {currencySymbol[currency]}{" "}
                 {expenses.reduce((sum, exp) => sum + exp.amount, 0).toFixed(2)}
               </p>
             </div>
@@ -98,19 +97,19 @@ function DashBoardHome({ user }) {
               </h3>
               {balance <= 500 && balance > 0 ? (
                 <p className="text-2xl font-bold text-red-600">
-                  {currencySymbol[currency]}  {balance.toFixed(2)}
+                  {currencySymbol[currency]} {balance.toFixed(2)}
                 </p>
               ) : balance <= 1000 && balance > 0 ? (
                 <p className="text-2xl font-bold text-orange-500">
-                  {currencySymbol[currency]}  {balance.toFixed(2)}
+                  {currencySymbol[currency]} {balance.toFixed(2)}
                 </p>
               ) : balance < 0 ? (
                 <p className="text-2xl font-bold text-red-800">
-                  {currencySymbol[currency]}  {balance.toFixed(2)}
+                  {currencySymbol[currency]} {balance.toFixed(2)}
                 </p>
               ) : (
                 <p className="text-2xl font-bold text-emerald-400">
-                  {currencySymbol[currency]}  {balance.toFixed(2)}
+                  {currencySymbol[currency]} {balance.toFixed(2)}
                 </p>
               )}
             </div>
@@ -118,7 +117,9 @@ function DashBoardHome({ user }) {
               <h3 className="text-xl font-semibold text-emerald-400 mb-2">
                 Total Transactions
               </h3>
-              <p className="text-2xl font-bold">{transactions}</p>
+              <p className="text-2xl font-bold text-emerald-400">
+                {transactions}
+              </p>
             </div>
           </div>
         )}
@@ -127,7 +128,9 @@ function DashBoardHome({ user }) {
             <h3 className="text-xl font-semibold text-emerald-400 mb-2 ">
               Expense Distribution
             </h3>
-            <PieChart expenseCategory={expenseCategory} />
+            <div className="flex justify-center items-center w-full">
+              <PieChart expenseCategory={expenseCategory} />
+            </div>
           </div>
           <div className="mt-6 items-center">
             <h3 className="text-xl font-semibold text-emerald-400 mb-2">

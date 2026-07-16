@@ -46,9 +46,9 @@ function Analytics({ user }) {
           <Loading />
         </div>
       ) : (
-        <div className="flex-1 p-4 ">
+        <div className="flex-1 px-4 ">
           <div>
-            <h2 className="text-2xl font-bold mb-4">Analytics</h2>
+            <h2 className="text-2xl text-emerald-400 font-bold mb-4">Analytics</h2>
             <p className="text-gray-600">
               Here you can view and analyze your financial data. You can track
               your income and expenses, visualize trends, and gain insights into
@@ -56,19 +56,21 @@ function Analytics({ user }) {
             </p>
           </div>
           <div className="p-4 rounded-lg border  border-emerald-400/20 w-auto sm:w-[900px] h-auto sm:h-[500px] mt-5 ">
-            <h3 className="text-lg font-semibold mb-2">Daily Expenses</h3>
+            <h3 className="text-lg font-semibold mb-2 text-emerald-400">Daily Expenses</h3>
             <LineChart expensesData={expenses} />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
             <div className="border p-3 mb-4 border-emerald-400/20 h-auto">
-              <h3 className="text-lg font-semibold mb-2">
+              <h3 className="text-lg font-semibold mb-2 text-emerald-400">
                 Expense Distribution
               </h3>
-              <PieChart expenseCategory={expenseCategory} />
+              <div className="flex justify-center items-center w-full">
+                <PieChart expenseCategory={expenseCategory} />
+              </div>
             </div>
             <div className="border p-3 mb-4 border-emerald-400/20 h-auto">
-              <h3 className="text-lg font-semibold mb-2  ">Monthly Overview</h3>
+              <h3 className="text-lg font-semibold mb-2 text-emerald-400 ">Monthly Overview</h3>
               <MonthlyChart expensesData={expenses} />
             </div>
           </div>

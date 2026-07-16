@@ -5,25 +5,26 @@ import SideBar from "../components/DashBoardComponents/sideBar";
 
 function Dashboard({ user }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [desktopopen,DesktopOpen] = useState(false)
 console.log(isOpen)
   return (
     <>
-      <div className="flex w-full min-h-screen bg-[#0F172A]">
+      <div className="flex  ">
         <div>
-          <div className="hidden md:block w-72 bg-[#080b13] text-white min-h-screen">
-            <SideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
+          <div className={`hidden md:block ${desktopopen ? "w-64" : "w-24"} bg-white text-emerald-400 min-h-screen`}>
+            <SideBar isOpen={isOpen} setIsOpen={setIsOpen} DesktopOpen={DesktopOpen}/>
           </div>
-          <div className="block md:hidden bg-[#080b13] text-white min-h-screen">
+          <div className="block md:hidden bg-white text-emerald-400 min-h-screen">
             <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </div>
 
-        <div className="w-full bg-[#0b1731]">
-          <nav className="bg-[#090c15] md:hidden w-full p-4 fixed top-0 left-0 z-50 flex justify-between">
-            <div className="flex w-full justify-between gap-2 px-4">
+        <div className="flex-1 p-1 bg-white min-h-screen">
+          <nav className="bg-white md:hidden  p-4 fixed top-0 left-0 z-50 flex justify-between">
+            <div className="flex  justify-between gap-2 px-4">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-white md:hidden"
+                className="text-emerald-400 md:hidden"
               >
                 {isOpen ? (
                   <svg
@@ -58,7 +59,7 @@ console.log(isOpen)
                   </svg>
                 )}
               </button>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-md bg-[#0F172A] text-white md:mr-5">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-md bg-white text-emerald-400 md:mr-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -72,9 +73,9 @@ console.log(isOpen)
                   />
                 </svg>
 
-                <h1>
+                <h1 className="text-emerald-400">
                   Welcome,
-                  <span className="text-emerald-400">
+                  <span className="dancingscript text-emerald-400">
                     {" "}
                     {user?.user_metadata?.name}
                   </span>
@@ -82,9 +83,9 @@ console.log(isOpen)
               </div>
             </div>
           </nav>
-          <nav className="bg-[#090c15] hidden md:block w-full p-4 fixed top-0 left-0 flex justify-end ">
-            <div className="flex w-full justify-end gap-2 px-4">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-md bg-[#0F172A] text-white md:mr-5">
+          <nav className="bg-white hidden md:block w-full p-4 fixed top-0 left-0 flex justify-end ">
+            <div className="flex w-full justify-end gap-2 px-2">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-md bg-white text-white md:mr-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -98,9 +99,9 @@ console.log(isOpen)
                   />
                 </svg>
 
-                <h1>
+                <h1 className="text-emerald-400">
                   Welcome,
-                  <span className="text-emerald-400">
+                  <span className="dancingscript text-emerald-400">
                     {" "}
                     {user?.user_metadata?.name}
                   </span>
@@ -108,7 +109,7 @@ console.log(isOpen)
               </div>
             </div>
           </nav>
-          <div className="w-full mt-20 p-4 text-[#cecece]">
+          <div className="w-full mt-20 p-2 text-[#cecece]">
             <Outlet />
           </div>
         </div>

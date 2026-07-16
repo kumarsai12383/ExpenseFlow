@@ -23,9 +23,9 @@ function IncomePage({ user }) {
   }, []);
   return (
     <>
-      <div className="flex-1 p-4 ">
+      <div className="flex-1 px-2 ">
         <div>
-          <h2 className="text-2xl font-bold mb-4">Income</h2>
+          <h2 className="text-2xl text-emerald-400 font-bold mb-4">Income</h2>
           <p className="text-gray-600">
             Here you can view and manage all your income. You can add new income
             sources, categorize them, and track your financial growth over time.

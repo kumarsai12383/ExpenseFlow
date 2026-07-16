@@ -74,7 +74,7 @@ function ProfileForm({ user }) {
                 clip-rule="evenodd"
               />
             </svg>
-            <h1 className="text-2xl flex items-center font-bold">Profile </h1>
+            <h1 className="text-2xl flex items-center font-bold text-emerald-400">Profile </h1>
           </div>
           <form action="" className="mt-3" onSubmit={profile.length > 0 ? handleUpdate : handleSubmit}>
             {issubmitted && (
@@ -88,7 +88,7 @@ function ProfileForm({ user }) {
                   Full Name:
                 </label>
                 <input
-                  className="border border-emerald-400/20 p-2 rounded mb-4 w-full"
+                  className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   type="text"
                   id="name"
                   value={name}
@@ -100,7 +100,7 @@ function ProfileForm({ user }) {
                   Phone:
                 </label>
                 <input
-                  className="border border-emerald-400/20 p-2 rounded mb-4 w-full"
+                  className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   type="text"
                   id="phone"
                   value={phone}
@@ -112,7 +112,7 @@ function ProfileForm({ user }) {
                   Gender:
                 </label>
                 <select
-                  className="border bg-gary-800 border-emerald-400/20 p-2 rounded mb-4 w-full"
+                  className="border text-gray-900 bg-gary-800 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   id="gender"
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
@@ -142,7 +142,7 @@ function ProfileForm({ user }) {
                   City:
                 </label>
                 <input
-                  className="border border-emerald-400/20 p-2 rounded mb-4 w-full"
+                  className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   type="text"
                   id="city"
                   value={city}
@@ -151,13 +151,13 @@ function ProfileForm({ user }) {
               </div>
 
               <div className="flex justify-center items-start  flex-col  p-2 rounded mb-1">
-                <label className="mb-3 text-emerald-400" htmlFor="dob">
+                <label className="mb-3  text-emerald-400" htmlFor="dob">
                   Date of Birth:
                 </label>
                 <input
                   value={dob}
                   onChange={(e) => setDob(e.target.value)}
-                  className="border border-emerald-400/20 p-2 rounded mb-4 w-full"
+                  className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   type="date"
                   id="dob"
                 />
@@ -168,7 +168,7 @@ function ProfileForm({ user }) {
                   Occupation:
                 </label>
                 <input
-                  className="border  border-emerald-400/20 p-2 w-full rounded mb-4"
+                  className="border text-gray-900 border-emerald-400/20 p-2 w-full rounded mb-4"
                   type="text"
                   id="occupation"
                   value={occupation}
