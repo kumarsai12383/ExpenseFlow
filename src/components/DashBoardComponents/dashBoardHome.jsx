@@ -55,7 +55,7 @@ function DashBoardHome({ user }) {
   }, [income, expenses]);
   return (
     <>
-      <div className="px-2">
+      <div className="">
         <h2 className="text-2xl font-bold text-emerald-400 mb-4">
           Welcome to Your Dashboard{" "}
           <span className="dancingscript text-emerald-400">
@@ -63,7 +63,7 @@ function DashBoardHome({ user }) {
           </span>
         </h2>
 
-        <p className="text-white">
+        <p className="text-emerald-500 font-bold">
           Here you can manage your expenses, view reports, and customize your
           settings.
         </p>

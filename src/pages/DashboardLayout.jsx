@@ -9,7 +9,7 @@ function Dashboard({ user }) {
 console.log(isOpen)
   return (
     <>
-      <div className="flex  ">
+      <div className="flex">
         <div>
           <div className={`hidden md:block ${desktopopen ? "w-64" : "w-24"} bg-white text-emerald-400 min-h-screen`}>
             <SideBar isOpen={isOpen} setIsOpen={setIsOpen} DesktopOpen={DesktopOpen}/>
@@ -19,8 +19,8 @@ console.log(isOpen)
           </div>
         </div>
 
-        <div className="flex-1 p-1 bg-white min-h-screen">
-          <nav className="bg-white md:hidden  p-4 fixed top-0 left-0 z-50 flex justify-between">
+        <div className="block w-full sm:flex-1 p-1 bg-white min-h-screen">
+          <nav className="bg-white md:hidden w-full  p-4 fixed top-0 left-0 z-50 flex justify-between">
             <div className="flex  justify-between gap-2 px-4">
               <button
                 onClick={() => setIsOpen(!isOpen)}
