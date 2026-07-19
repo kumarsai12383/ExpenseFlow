@@ -46,7 +46,8 @@ function IncomePage({ user }) {
                 isEditing={isEditing}
                 setEditing={setEditing}
                 selectedIncome={selectedIncome}
-                selectedIncome={selectedIncome}
+                setSelectedIncome={setSelectedIncome}
+                setShowAddIncomeForm={setShowAddIncomeForm}
               />
               <button
                 onClick={() => {

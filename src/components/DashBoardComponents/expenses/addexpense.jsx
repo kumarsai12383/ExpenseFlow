@@ -19,8 +19,12 @@ function AddExpenseForm({ user, onExpenseAdded, isEditing, selectedExpense }) {
         note,
         setIsSubmitted
       );
+      
+      setIsSubmitted(true);
+     
     } else {
       await AddExpense(userId, title, parseFloat(amount), category, note, setIsSubmitted);
+    
     }
     await onExpenseAdded();
     setTitle("");
@@ -43,8 +47,8 @@ function AddExpenseForm({ user, onExpenseAdded, isEditing, selectedExpense }) {
         className="space-y-4 w-[400px] border border-gray-300 p-4 rounded-lg shadow-md"
       >
         {issubmitted && (
-          <div className="flex justify-center items-center absolute top-0 text-center left-0 bg-emerald-400 text-emerald-900 p-2 rounded mb-4">
-            Expense added successfully!
+          <div className="flex justify-center items-center absolute top-10 text-center left-30 bg-emerald-400 text-emerald-900 p-2 rounded mb-4">
+            {isEditing ? "Expense updated successfully!" : "Expense added successfully!"}
           </div>
         )}
         <div>

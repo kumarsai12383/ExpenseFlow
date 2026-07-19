@@ -44,6 +44,7 @@ function ExpensePage({ user }) {
               <AddExpenseForm
                 user={user}
                 onExpenseAdded={fetchExpenses}
+                setShowAddExpenseForm={setShowAddExpenseForm}
                 isEditing={isEditing}
                 selectedExpense={selectedExpense}
               />

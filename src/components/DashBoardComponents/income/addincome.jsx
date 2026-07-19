@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { AddIncome, UpdateIncome } from "../../../supaApi/data";
-function AddIncomeForm({ user, onIncomeAdded,setIsEditing, isEditing, selectedIncome,setSelectedIncome }) {
+function AddIncomeForm({
+  user,
+  onIncomeAdded,
+  setIsEditing,
+  isEditing,
+  selectedIncome,
+  setSelectedIncome,
+}) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
 
@@ -10,19 +17,33 @@ function AddIncomeForm({ user, onIncomeAdded,setIsEditing, isEditing, selectedIn
     event.preventDefault();
     const userId = user?.id;
     if (isEditing) {
-      await UpdateIncome(selectedIncome.id, title, parseFloat(amount), setIsSubmitted, setIsEditing, setSelectedIncome);
+      await UpdateIncome(
+        selectedIncome.id,
+        title,
+        parseFloat(amount),
+        setIsSubmitted,
+        setIsEditing,
+        setSelectedIncome,
+      );
       setIsSubmitted(true);
-      
     } else {
-      await AddIncome(userId, title, parseFloat(amount), setIsSubmitted ,setIsEditing, setSelectedIncome);
+      await AddIncome(
+        userId,
+        title,
+        parseFloat(amount),
+        setIsSubmitted,
+        setIsEditing,
+        setSelectedIncome,
+      );
     }
+
     await onIncomeAdded();
     setTitle("");
     setAmount("");
   };
 
   useEffect(() => {
-    if (selectedIncome!==null) {
+    if (selectedIncome) {
       setTitle(selectedIncome.title);
       setAmount(selectedIncome.amount);
     }
@@ -35,8 +56,10 @@ function AddIncomeForm({ user, onIncomeAdded,setIsEditing, isEditing, selectedIn
         className="space-y-4 w-[400px] border border-gray-300 p-4 rounded-lg shadow-md"
       >
         {issubmitted && (
-          <div className="flex justify-center items-center absolute top-0 text-center left-0 bg-emerald-400 text-emerald-900 p-2 rounded mb-4">
-            Income added successfully!
+          <div className="flex justify-center items-center absolute top-10 text-center left-30 bg-emerald-400 text-emerald-900 p-2 rounded mb-4">
+            {isEditing
+              ? "Income updated successfully!"
+              : "Income added successfully!"}
           </div>
         )}
         <div>
