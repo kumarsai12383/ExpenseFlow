@@ -21,8 +21,8 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
               setIsOpen(false);
             }}
           ></div>
-          <aside className="fixed block md:hidden top-0 left-0 z-[60] h-full w-auto bg-white text-gray-800 transition-transform duration-300 w-auto ease-in-out transform ">
-            <nav className="flex flex-col h-full p-4 mt-0">
+          <aside className="fixed block md:hidden top-0 left-0 z-[60] h-screen  bg-gray-700 text-gray-800 transition-transform duration-300 ease-in-out transform ">
+            <nav className="flex flex-col h-full pl-4 bg-white mt-0">
               <div className="flex items-center justify-center">
                 <div>
                   <button onClick={() => setIsOpen(!isOpen)}>
@@ -72,7 +72,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                 </div>
               </div>
               <hr className="border-gray-600 mb-8" />
-              <div className="flex-1 w-full px-15 py-6 rounded-lg shadow-lg">
+              <div className="flex-1 w-full px-15 py-6 rounded-lg ">
                 <ul className="space-y-8 w-full ">
                   <li className="flex items-center gap-2">
                     <NavLink
