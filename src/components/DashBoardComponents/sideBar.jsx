@@ -22,7 +22,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
             }}
           ></div>
           <aside className="fixed block md:hidden top-0 left-0 z-[60] h-full w-auto bg-white text-gray-800 transition-transform duration-300 w-auto ease-in-out transform ">
-            <nav className="flex flex-col h-full p-4 mt-16">
+            <nav className="flex flex-col h-full p-4 mt-0">
               <div className="flex items-center justify-center">
                 <div>
                   <button onClick={() => setIsOpen(!isOpen)}>
