@@ -3,11 +3,8 @@ import { GetExpenses } from "../../../supaApi/data";
 import AddExpenseForm from "./addexpense";
 import { useState, useEffect } from "react";
 
-
-
 import Loading from "../../Loading";
 function ExpensePage({ user }) {
- 
   const [expensesData, setExpensesData] = useState([]);
   const [showAddExpenseForm, setShowAddExpenseForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,12 +17,11 @@ function ExpensePage({ user }) {
       const expenses = await GetExpenses(userId);
       setExpensesData(expenses || []);
       setLoading(false);
-     
     }
   };
   useEffect(() => {
     fetchExpenses();
-  }, []);
+  }, [user]);
   return (
     <>
       <div className="flex-1 px-2 ">
@@ -52,7 +48,11 @@ function ExpensePage({ user }) {
                 selectedExpense={selectedExpense}
               />
               <button
-                onClick={() => setShowAddExpenseForm(false)}
+                onClick={() => {
+                  setShowAddExpenseForm(false);
+                  setIsEditing(false);
+                  setSelectedExpense(null);
+                }}
                 className="absolute  top-0 right-0  text-white  p-0"
               >
                 <svg

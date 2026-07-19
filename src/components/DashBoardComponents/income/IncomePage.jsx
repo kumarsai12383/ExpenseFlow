@@ -20,7 +20,7 @@ function IncomePage({ user }) {
   };
   useEffect(() => {
     fetchIncome();
-  }, []);
+  }, [user]);
   return (
     <>
       <div className="flex-1 px-2 ">
@@ -44,10 +44,16 @@ function IncomePage({ user }) {
                 user={user}
                 onIncomeAdded={fetchIncome}
                 isEditing={isEditing}
+                setEditing={setEditing}
+                selectedIncome={selectedIncome}
                 selectedIncome={selectedIncome}
               />
               <button
-                onClick={() => setShowAddIncomeForm(false)}
+                onClick={() => {
+                  setShowAddIncomeForm(false);
+                  setEditing(false);
+                  setSelectedIncome(null);
+                }}
                 className="absolute  top-0 right-0  text-white  p-0"
               >
                 <svg

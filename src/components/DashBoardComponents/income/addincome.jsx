@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AddIncome, UpdateIncome } from "../../../supaApi/data";
-function AddIncomeForm({ user, onIncomeAdded, isEditing, selectedIncome }) {
+function AddIncomeForm({ user, onIncomeAdded,setIsEditing, isEditing, selectedIncome,setSelectedIncome }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
 
@@ -10,9 +10,11 @@ function AddIncomeForm({ user, onIncomeAdded, isEditing, selectedIncome }) {
     event.preventDefault();
     const userId = user?.id;
     if (isEditing) {
-      await UpdateIncome(selectedIncome.id, title, parseFloat(amount), setIsSubmitted);
+      await UpdateIncome(selectedIncome.id, title, parseFloat(amount), setIsSubmitted, setIsEditing, setSelectedIncome);
+      setIsSubmitted(true);
+      
     } else {
-      await AddIncome(userId, title, parseFloat(amount), setIsSubmitted);
+      await AddIncome(userId, title, parseFloat(amount), setIsSubmitted ,setIsEditing, setSelectedIncome);
     }
     await onIncomeAdded();
     setTitle("");
@@ -20,7 +22,7 @@ function AddIncomeForm({ user, onIncomeAdded, isEditing, selectedIncome }) {
   };
 
   useEffect(() => {
-    if (selectedIncome) {
+    if (selectedIncome!==null) {
       setTitle(selectedIncome.title);
       setAmount(selectedIncome.amount);
     }
