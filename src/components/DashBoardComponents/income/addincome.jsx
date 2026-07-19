@@ -56,7 +56,7 @@ function AddIncomeForm({
         className="space-y-4 w-[400px] border border-gray-300 p-4 rounded-lg shadow-md"
       >
         {issubmitted && (
-          <div className="flex justify-center items-center absolute top-10 text-center left-30 bg-emerald-400 text-emerald-900 p-2 rounded mb-4">
+          <div className="flex justify-center items-center absolute top-10 text-center left-20 sm:left-30 bg-emerald-400 text-emerald-900 p-2 rounded mb-4">
             {isEditing
               ? "Income updated successfully!"
               : "Income added successfully!"}

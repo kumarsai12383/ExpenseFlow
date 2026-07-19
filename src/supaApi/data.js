@@ -29,7 +29,7 @@ async function AddExpense(
   }
 }
 
-async function AddIncome(userId, title, amount, setIsSubmitted,setIsEditing, setSelectedIncome ,setAmount, setTitle) {
+async function AddIncome(userId, title, amount, setIsSubmitted,) {
   const { data, error } = await supabase
     .from("Income")
     .insert([{ title: title, amount: amount, user_id: userId }]);
@@ -37,11 +37,9 @@ async function AddIncome(userId, title, amount, setIsSubmitted,setIsEditing, set
     console.error("Error adding income:", error);
     return null;
   } else {
-    setIsEditing(false);
-    setSelectedIncome(null);
+    
     setIsSubmitted(true);
-    setAmount("");
-    setTitle("");
+    
     
     setTimeout(() => {
       setIsSubmitted(false);
@@ -101,7 +99,7 @@ async function DeleteIncome(incomeId) {
  
   return data;
 }
-async function UpdateIncome(incomeId, title, amount,isSubmitted, setIsEditing, setSelectedIncome ) {
+async function UpdateIncome(incomeId, title, amount,isSubmitted ) {
   const {data,error} = await supabase.from("Income").update({title: title, amount: amount}).eq("id", incomeId);
   if(error){
     console.log(error)
@@ -109,8 +107,7 @@ async function UpdateIncome(incomeId, title, amount,isSubmitted, setIsEditing, s
   }
  
   isSubmitted(true);
-  setIsEditing(false);
-  setSelectedIncome(null);
+ 
   
   setTimeout(() => {
     isSubmitted(false);
