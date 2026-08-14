@@ -48,7 +48,7 @@ function AddExpenseForm({ user, onExpenseAdded, isEditing, selectedExpense }) {
       >
         {issubmitted && (
           <div className="flex justify-center items-center absolute top-10 text-center left-20 sm:left-30 bg-emerald-400 text-emerald-900 p-2 rounded mb-4">
-            {isEditing ? "Expense updated successfully!" : "Expense added successfully!"}
+            {isEditing ?"Expense updated successfully!" : "Expense added successfully!"}
           </div>
         )}
         <div>
