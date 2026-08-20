@@ -50,8 +50,12 @@ function LoginAndSignup({ setLoginStatus }) {
         navigate("/dashboard");
       }, 3000);
     }
+    else {
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
   }
-
+  }
   async function handleSignUp() {
     try {
       setLoading(true);
@@ -270,4 +274,5 @@ function LoginAndSignup({ setLoginStatus }) {
     </>
   );
 }
+
 export default LoginAndSignup;

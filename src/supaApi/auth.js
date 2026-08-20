@@ -54,6 +54,9 @@ async function SignUpwithEmail(email, password, username,setMessage, setStatus) 
     console.error("Error signing up:", error);
     setMessage("Error " + (error.message || ""));
     setStatus("Sign up failed!");
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
   } else {
    
     setMessage("Sign up successful! Please Login to continue.");
