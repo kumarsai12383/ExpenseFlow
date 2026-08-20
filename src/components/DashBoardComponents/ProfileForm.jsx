@@ -11,26 +11,55 @@ function ProfileForm({ user }) {
   const [profile, setProfile] = useState([]);
   const [occupation, setOccupation] = useState("");
   const [issubmitted, setIsSubmitted] = useState(false);
+const validation =
+      name.length > 1 &&
+     phone.length >=10 &&
+      city.length > 0 &&
+      gender.length > 0 &&
+      dob.length > 0 &&
+      occupation.length > 0;
   const handleSubmit = async (event) => {
     event.preventDefault();
     const userId = user?.id;
-    await AddProfile(
-      userId,
-      name,
-      phone,
-      city,
-      gender,
-      dob,
-      occupation,
-      setIsSubmitted,
-    );
+    
+    
+    if (validation) {
+      await AddProfile(
+        userId,
+        name,
+        phone,
+        city,
+        gender,
+        dob,
+        occupation,
+        setIsSubmitted,
+      );
+    } else {
+      alert("Form is not valid. Please fill in all required fields.");
+    }
   };
+
   const handleUpdate = async (event) => {
     event.preventDefault();
     const userId = user?.id;
-    await UpdateProfile(userId, name, phone, city, gender, dob, occupation, setIsSubmitted);
+    console.log(name.length, String(phone.length), city.length, gender.length, dob.length, occupation.length);
+   
+    if (validation) {
+      await UpdateProfile(
+        userId,
+        name,
+        Number(phone),
+        city,
+        gender,
+        dob,
+        occupation,
+        setIsSubmitted,
+      );
+    } else {
+      alert("Form is not valid. Please fill in all required fields.");
+    }
   };
-  const validation = name.length > 0 && phone.length > 0 && city.length > 0 && gender.length > 0 && dob.length > 0 && occupation.length > 0;
+
   useEffect(() => {
     const fetchProfile = async () => {
       setLoading(true);
@@ -42,8 +71,9 @@ function ProfileForm({ user }) {
           const { Full_Name, Phone, City, Gender, Dob, Occupation } =
             profile[0];
           setProfile(profile);
+          console.log(profile);
           setName(Full_Name);
-          setPhone(Phone);
+          setPhone(String(Phone));
           setCity(City);
           setGender(Gender);
           setDob(Dob);
@@ -55,7 +85,6 @@ function ProfileForm({ user }) {
     fetchProfile();
   }, [user]);
 
-  
   return (
     <>
       {loading ? (
@@ -75,9 +104,15 @@ function ProfileForm({ user }) {
                 clip-rule="evenodd"
               />
             </svg>
-            <h1 className="text-2xl flex items-center font-bold text-emerald-400">Profile </h1>
+            <h1 className="text-2xl flex items-center font-bold text-emerald-400">
+              Profile{" "}
+            </h1>
           </div>
-          <form action="" className="mt-3" onSubmit={profile.length > 0 ? handleUpdate : handleSubmit}>
+          <form
+            action=""
+            className="mt-3"
+            onSubmit={profile.length > 0 ? handleUpdate : handleSubmit}
+          >
             {issubmitted && (
               <div className="flex justify-center items-center  p-2 rounded mb-4">
                 Profile added successfully!
@@ -162,9 +197,8 @@ function ProfileForm({ user }) {
                   value={dob}
                   onChange={(e) => setDob(e.target.value)}
                   className="border  border-emerald-400/20 text-gray-500 p-2 rounded mb-4 w-full"
-                  type="date" 
+                  type="date"
                   data-placeholder="Select your date of birth"
-                  
                 />
               </div>
 
@@ -185,7 +219,6 @@ function ProfileForm({ user }) {
             {profile.length > 0 ? (
               <button
                 type="submit"
-                disabled={!validation}
                 className={`bg-emerald-400 hover:bg-emerald-400  text-black font-bold py-2 px-4 rounded ${!validation ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 Update Profile
@@ -193,7 +226,6 @@ function ProfileForm({ user }) {
             ) : (
               <button
                 type="submit"
-                disabled={!validation}
                 className={`bg-emerald-400 hover:bg-emerald-400  text-black font-bold py-2 px-4 rounded ${!validation ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 Submit Profile
