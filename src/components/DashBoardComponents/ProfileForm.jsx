@@ -91,6 +91,7 @@ function ProfileForm({ user }) {
                   className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   type="text"
                   id="name"
+                  placeholder="Enter your full name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -102,6 +103,7 @@ function ProfileForm({ user }) {
                 <input
                   className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   type="text"
+                  placeholder="Enter your phone number"
                   id="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -112,7 +114,7 @@ function ProfileForm({ user }) {
                   Gender:
                 </label>
                 <select
-                  className="border text-gray-900 bg-gary-800 border-emerald-400/20 p-2 rounded mb-4 w-full"
+                  className="border text-gray-500 bg-gary-800 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   id="gender"
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
@@ -144,6 +146,7 @@ function ProfileForm({ user }) {
                 <input
                   className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
                   type="text"
+                  placeholder="Enter your city"
                   id="city"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
@@ -157,9 +160,10 @@ function ProfileForm({ user }) {
                 <input
                   value={dob}
                   onChange={(e) => setDob(e.target.value)}
-                  className="border text-gray-900 border-emerald-400/20 p-2 rounded mb-4 w-full"
-                  type="date"
-                  id="dob"
+                  className="border  border-emerald-400/20 text-gray-500 p-2 rounded mb-4 w-full"
+                  type="date" 
+                  data-placeholder="Select your date of birth"
+                  
                 />
               </div>
 
@@ -170,6 +174,7 @@ function ProfileForm({ user }) {
                 <input
                   className="border text-gray-900 border-emerald-400/20 p-2 w-full rounded mb-4"
                   type="text"
+                  placeholder="Enter your occupation"
                   id="occupation"
                   value={occupation}
                   onChange={(e) => setOccupation(e.target.value)}

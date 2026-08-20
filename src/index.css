@@ -34,3 +34,12 @@ transform:translateY(0);
 transform:translateY(-10px);
 }
 }
+/* Makes the calendar icon white */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Gives the calendar icon a specific color hue */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
