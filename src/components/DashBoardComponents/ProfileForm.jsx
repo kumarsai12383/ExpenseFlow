@@ -114,7 +114,7 @@ const validation =
             onSubmit={profile.length > 0 ? handleUpdate : handleSubmit}
           >
             {issubmitted && (
-              <div className="flex justify-center items-center  p-2 rounded mb-4">
+              <div className="flex justify-center items-center text-emerald-600 p-2 rounded mb-4">
                 Profile added successfully!
               </div>
             )}
