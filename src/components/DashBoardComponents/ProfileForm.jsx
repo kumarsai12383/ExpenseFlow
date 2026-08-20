@@ -30,6 +30,7 @@ function ProfileForm({ user }) {
     const userId = user?.id;
     await UpdateProfile(userId, name, phone, city, gender, dob, occupation, setIsSubmitted);
   };
+  const validation = name.length > 0 && phone.length > 0 && city.length > 0 && gender.length > 0 && dob.length > 0 && occupation.length > 0;
   useEffect(() => {
     const fetchProfile = async () => {
       setLoading(true);
@@ -184,14 +185,16 @@ function ProfileForm({ user }) {
             {profile.length > 0 ? (
               <button
                 type="submit"
-                className="bg-emerald-400 hover:bg-emerald-400  text-black font-bold py-2 px-4 rounded"
+                disabled={!validation}
+                className={`bg-emerald-400 hover:bg-emerald-400  text-black font-bold py-2 px-4 rounded ${!validation ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 Update Profile
               </button>
             ) : (
               <button
                 type="submit"
-                className="bg-emerald-400 hover:bg-emerald-400  text-black font-bold py-2 px-4 rounded"
+                disabled={!validation}
+                className={`bg-emerald-400 hover:bg-emerald-400  text-black font-bold py-2 px-4 rounded ${!validation ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 Submit Profile
               </button>
