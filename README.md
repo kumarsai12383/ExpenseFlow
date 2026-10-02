@@ -8,7 +8,7 @@ Built using **React**, **Tailwind CSS**, and **Supabase**, ExpenseFlow provides 
 
 ## 🚀 Live Demo
 
-> https://your-vercel-url.vercel.app
+> http://expense-flow-peach-seven.vercel.app
 
 ---
 
