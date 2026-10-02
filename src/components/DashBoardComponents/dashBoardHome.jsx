@@ -22,6 +22,7 @@ function DashBoardHome({ user }) {
     setLoading(true);
     const userId = user?.id;
     if (userId) {
+      console.log("Fetching expenses and income for user:", userId);
       const expensesData = await GetExpenses(userId);
       const incomeData = await GetIncome(userId);
       setIncome(incomeData || []);

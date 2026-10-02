@@ -31,9 +31,9 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/auth" element={<LoginAndSignup setLoginStatus={setLoginStatus} />} />
-          <Route path="/dashboard" element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<Dashboard user={user} />}>
-              <Route index element={<DashboardHome user={user} />} />
+          <Route path="" element={<ProtectedRoute />}>
+            <Route path="app" element={<Dashboard user={user} />}>
+              <Route path="dashboard" element={<DashboardHome user={user} />} />
               <Route path="logout" element={<LogoutPage />} />
               <Route path="expenses" element={<ExpensesPage user={user}/>} />
               <Route path="income" element={<IncomePage user={user}/>} />

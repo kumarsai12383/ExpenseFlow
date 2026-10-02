@@ -23,6 +23,7 @@ function LandingPage() {
   }, []);
   useEffect(() => {
     if (user) {
+      console.log(user)
       console.log("User is logged in.");
     } else {
       console.log("No user is logged in.");

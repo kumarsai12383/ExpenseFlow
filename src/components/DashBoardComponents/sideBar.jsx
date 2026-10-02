@@ -76,7 +76,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                 <ul className="space-y-8 w-full ">
                   <li className="flex items-center gap-2">
                     <NavLink
-                      to="/dashboard"
+                      to="/app/dashboard"
                       className={({ isActive }) =>
                         isActive
                           ? "bg-blue-500 text-emerald-600"
@@ -112,7 +112,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                           ? "bg-blue-500 text-emerald-600"
                           : "text-gray-600"
                       }
-                      to="/dashboard/expenses"
+                      to="/app/expenses"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
                     >
@@ -145,7 +145,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                           ? "bg-blue-500 text-emerald-600"
                           : "text-gray-600"
                       }
-                      to="/dashboard/income"
+                      to="/app/income"
                       className="hover:text-emerald-400  flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
                     >
@@ -175,7 +175,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                           ? "bg-blue-500 text-emerald-600"
                           : "text-gray-600"
                       }
-                      to="/dashboard/analytics"
+                      to="/app/analytics"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
                     >
@@ -204,7 +204,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                           ? "bg-blue-500 text-emerald-600"
                           : "text-gray-600"
                       }
-                      to="/dashboard/profile"
+                      to="/app/profile"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
                     >
@@ -234,7 +234,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                           ? "bg-blue-500 text-emerald-600"
                           : "text-gray-600"
                       }
-                      to="/dashboard/settings"
+                      to="/app/settings"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
                     >
@@ -263,7 +263,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                           ? "bg-blue-500 text-emerald-600"
                           : "text-gray-600"
                       }
-                      to="/dashboard/logout"
+                      to="/app/logout"
                       className="hover:text-emerald-400 flex items-center gap-2"
                       onClick={() => setIsOpen(false)}
                     >
@@ -296,20 +296,20 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
         className={`fixed hidden  md:block top-0 left-0  z-30 h-full ${desktopOpen ? "w-64" : "w-24"} transition-all duration-200  text-gray-900  ease-in-out transform `}
       >
         <nav className="flex flex-col h-full px-2">
-          <div
-            className={` items-center justify-center block`}
-          >
+          <div className={` items-center justify-center block`}>
             <div className="flex items-center justify-center">
               <img src={Logo} alt="ExpenseFlow Logo" className="w-17 h-17 " />
               {desktopOpen && (
                 <h1 className="text-xl font-bold">ExpenseFlow</h1>
               )}
             </div>
-            <div className={`flex items-center ${desktopOpen ? "justify-end" : "justify-center"}`}>
+            <div
+              className={`flex items-center ${desktopOpen ? "justify-end" : "justify-center"}`}
+            >
               <button
                 onClick={() => {
                   setDesktopOpen(!desktopOpen);
-                  DesktopOpen(!desktopOpen)
+                  DesktopOpen(!desktopOpen);
                 }}
               >
                 {desktopOpen ? (
@@ -356,10 +356,10 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                 <NavLink
                   className={({ isActive }) =>
                     isActive
-                      ? "flex items-center gap-2 p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400  text-emerald-600"
-                      : "text-gray-600"
+                      ? "flex items-center gap-2  border border-emerald-300 w-auto p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400 transition-all duration-200"
+                      : "flex items-center gap-2 text-gray-600 p-2 rounded-md hover:text-emerald-400 "
                   }
-                  to="/dashboard"
+                  to="/app/dashboard"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -389,7 +389,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                       ? "flex items-center gap-2  border border-emerald-300 w-auto p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400 transition-all duration-200"
                       : "flex items-center gap-2 text-gray-600 p-2 rounded-md hover:text-emerald-400 "
                   }
-                  to="/dashboard/expenses"
+                  to="/app/expenses"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -420,7 +420,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                       ? "flex items-center gap-2 border border-emerald-300 w-auto p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400 transition-all duration-200"
                       : "flex items-center gap-2 text-gray-600 p-2 rounded-md hover:text-emerald-400 "
                   }
-                  to="/dashboard/income"
+                  to="/app/income"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -443,7 +443,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
               </li>
               <li className="flex items-center gap-2">
                 <NavLink
-                  to="/dashboard/analytics"
+                  to="/app/analytics"
                   className={({ isActive }) =>
                     isActive
                       ? "flex items-center gap-2 border border-emerald-300 w-auto p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400 transition-all duration-200"
@@ -475,7 +475,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                       ? "flex items-center gap-2 border border-emerald-300 w-auto p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400 transition-all duration-200"
                       : "flex items-center gap-2 text-gray-600 p-2 rounded-md hover:text-emerald-400 "
                   }
-                  to="/dashboard/profile"
+                  to="/app/profile"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -498,7 +498,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
               </li>
               <li className="flex items-center gap-2">
                 <NavLink
-                  to="/dashboard/settings"
+                  to="/app/settings"
                   className={({ isActive }) =>
                     isActive
                       ? "flex items-center gap-2 border border-emerald-300 w-auto p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400 transition-all duration-200"
@@ -530,7 +530,7 @@ function SideBar({ isOpen, setIsOpen, DesktopOpen }) {
                       ? "flex items-center gap-2 border border-emerald-300 w-auto p-2 rounded-md bg-emerald-50 text-emerald-600 hover:text-emerald-400 transition-all duration-200"
                       : "flex items-center gap-2 text-gray-600 p-2 rounded-md hover:text-emerald-400 "
                   }
-                  to="/dashboard/logout"
+                  to="/app/logout"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

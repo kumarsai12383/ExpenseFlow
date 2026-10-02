@@ -32,7 +32,7 @@ function LoginAndSignup({ setLoginStatus }) {
   useEffect(() => {
     if (user) {
     
-      navigate("/dashboard");
+      navigate("/app/dashboard");
     } else {
       console.log("No user is logged in.");
     }
@@ -47,7 +47,7 @@ function LoginAndSignup({ setLoginStatus }) {
     setLoading(false);
     if (status.includes("successful")) {
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/app/dashboard");
       }, 3000);
     }
     else {
