@@ -30,7 +30,7 @@ function LandingPage() {
     }
   }, [user]);
   if (user) {
-    return <Navigate to="/dashboard" />;
+    return <Navigate to="/app/dashboard" />;
   }
   return (
     <div className="bg-[#0F172A] w-full ">
