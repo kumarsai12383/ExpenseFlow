@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AddExpense, UpdateExpense } from "../../../supaApi/data";
-function AddExpenseForm({ user, onExpenseAdded, isEditing, selectedExpense }) {
+function AddExpenseForm({ user, onExpenseAdded, isEditing, selectedExpense,setShowAddExpenseForm }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
@@ -31,6 +31,7 @@ function AddExpenseForm({ user, onExpenseAdded, isEditing, selectedExpense }) {
     setAmount("");
     setCategory("");
     setNote("");
+    setShowAddExpenseForm(false)
   };
   useEffect(() => {
     if (selectedExpense) {
