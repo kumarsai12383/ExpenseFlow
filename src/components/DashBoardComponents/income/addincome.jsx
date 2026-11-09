@@ -7,6 +7,7 @@ function AddIncomeForm({
   isEditing,
   selectedIncome,
   setSelectedIncome,
+  setShowAddIncomeForm,
 }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
@@ -40,6 +41,7 @@ function AddIncomeForm({
     await onIncomeAdded();
     setTitle("");
     setAmount("");
+    setShowAddIncomeForm(false)
   };
 
   useEffect(() => {
